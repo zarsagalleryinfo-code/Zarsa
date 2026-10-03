@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe8a3" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#997316" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c22" />
+      <stop offset="100%" stop-color="#0a0a0c" />
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background Rounded Shield -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect x="12" y="12" width="488" height="488" rx="116" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-opacity="0.3" />
+  
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="url(#goldGrad)" stroke-width="6" filter="url(#goldGlow)" />
+  <circle cx="256" cy="256" r="142" fill="none" stroke="#d4af37" stroke-width="2" stroke-opacity="0.4" stroke-dasharray="6 6" />
+
+  <!-- Gold Ingot & Coin Center Icon -->
+  <g transform="translate(256, 256) scale(1.15)">
+    <!-- Gold Ingot -->
+    <path d="M -70 20 L -45 -40 L 45 -40 L 70 20 Z" fill="url(#goldGrad)" filter="url(#goldGlow)" />
+    <path d="M -70 20 L 70 20 L 50 50 L -50 50 Z" fill="#997316" />
+    <path d="M -45 -40 L 45 -40 L 35 -15 L -35 -15 Z" fill="#fff2c2" opacity="0.6" />
+    <!-- Fine Gold Stamp 999.9 -->
+    <text x="0" y="8" font-family="sans-serif" font-weight="900" font-size="20" fill="#2d2005" text-anchor="middle" letter-spacing="1">999.9</text>
+  </g>
+</svg>

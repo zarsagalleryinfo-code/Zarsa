@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>قیمت‌یار زرسا - اپلیکیشن همراه طلا و سکه</title>
+    <meta name="description" content="برنامه ساخت کارت و پست قیمت روزانه طلا، سکه و پارسیان برای گالری طلا زرسا" />
+    <link rel="icon" type="image/svg+xml" href="/assets/app-icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/app-icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="زرسا طلا" />
+    <script>
+      // Prevent noisy development HMR WebSocket connection errors in secure preview environment
+      if (typeof window !== 'undefined') {
+        const isPreview = window.location.hostname.includes('run.app') || window.location.hostname.includes('ais-');
+        if (isPreview) {
+          const OriginalWebSocket = window.WebSocket;
+          window.WebSocket = function(url, protocols) {
+            if (typeof url === 'string' && (url.includes('hmr') || url.includes('vite') || url.includes('ws://') || url.includes('wss://'))) {
+              return {
+                addEventListener: () => {},
+                removeEventListener: () => {},
+                send: () => {},
+                close: () => {},
+                readyState: 3 // CLOSED
+              };
+            }
+            return new OriginalWebSocket(url, protocols);
+          };
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#09090b] text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-black overscroll-none touch-manipulation">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

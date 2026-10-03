@@ -1,0 +1,8 @@
+{
+  "name": "قیمت‌یار زرسا",
+  "description": "برنامه ساخت استوری قیمت روزانه طلا، سکه و پارسیان برای گالری طلا زرسا. طراحی شده توسط گروه اکسین با مدیریت خدادادی.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
